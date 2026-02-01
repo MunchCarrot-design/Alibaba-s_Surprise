@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday, Alyan 🤍</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(#f8eef5, #eef4f1);
+  font-family: "Georgia", serif;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.girl {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: float 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.girl img {
+  width: 380px;
+}
+
+.message {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 24px 28px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4a4a4a;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  z-index: 2;
+}
+
+@keyframes float {
+  0%   { transform: translate(-50%, 0px); }
+  50%  { transform: translate(-50%, -12px); }
+  100% { transform: translate(-50%, 0px); }
+}
+
+.flower {
+  position: absolute;
+  top: -50px;
+  font-size: 20px;
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  from { transform: translateY(-50px); }
+  to   { transform: translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+<div class="scene">
+
+  <div class="message">
+    <strong>Happy Birthday, Alyan 🤍</strong><br><br>
+
+    I’m really grateful for you and the way you show up, always, quietly, consistently,
+    without making a fuss. You make ordinary days feel easier, chai dates feel
+    like anchors, and tough moments feel less heavy just by being there.<br><br>
+
+    I hope this year gives you back all the calm, kindness, and steadiness you give
+    so naturally. You deserve it, in all the little ways.<br><br>
+
+    Happy birthday. Always. 🌱
+  </div>
+
+  <div class="girl">
+    <img src="girl.png" alt="anime girl">
+  </div>
+
+</div>
+
+<script>
+const flowers = ["🌸","🌼","🌷","🍃"];
+for (let i = 0; i < 20; i++) {
+  const flower = document.createElement("div");
+  flower.className = "flower";
+  flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = (6 + Math.random() * 6) + "s";
+  document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
